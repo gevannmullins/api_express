@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "name"             : "apiExpress",
+      "cwd"              : process.cwd(),
+      "script"           : {
+        "Development"    : "./server/index.js",
+        "Production"     : "./build/index.js",
+        "Testing"        : "./test/index.js"
+      },
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "watch"            : false,
+      "ignore_watch"     : [ "node_modules" ],
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "cluster",
+      "env": {
+        "PORT": 3600,
+        "NODE_ENV": "Development"
+      },
+      "env_production" : {
+        "PORT": 3700,
+        "NODE_ENV": "Production"
+      }
+    }
+  ]
+}
